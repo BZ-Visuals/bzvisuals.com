@@ -7,7 +7,7 @@ import React from "react";
 //   2. Set LOGO_URL below to "/logo.png" (or your filename).
 //  Leave LOGO_URL empty ("") to use the B&Z text monogram instead.
 // ─────────────────────────────────────────────────────────────
-const LOGO_URL = "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/95b7caa94_logo.jpg";
+const LOGO_URL = "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/c0e9637ec_logo-white.png";
 
 export default function Logo({ onClick, className = "" }) {
   return (
@@ -17,7 +17,7 @@ export default function Logo({ onClick, className = "" }) {
       aria-label="B&Z Visuals home"
     >
       {LOGO_URL ? (
-        <img src={LOGO_URL} alt="B&Z Visuals" className="h-12 w-auto rounded-lg" />
+        <img src={LOGO_URL} alt="B&Z Visuals" className="h-12 w-auto" />
       ) : (
         <>
           <span className="font-display text-xl tracking-tight text-white">
