@@ -1,13 +1,13 @@
 import React from "react";
-import { ArrowUpRight, Instagram, Youtube } from "lucide-react";
+import { ArrowUpRight, Instagram, Facebook } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const scrollTo = (href) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
+// Add your links here when you're ready (replace the "#" with your profile URL).
 const socials = [
-  { label: "Instagram", href: "https://instagram.com", icon: Instagram },
-  { label: "Behance", href: "https://behance.net", icon: ArrowUpRight },
-  { label: "YouTube", href: "https://youtube.com", icon: Youtube },
-  { label: "TikTok", href: "https://tiktok.com", icon: ArrowUpRight },
+  { label: "Instagram", href: "#", icon: Instagram },
+  { label: "Facebook", href: "#", icon: Facebook },
 ];
 
 export default function Footer() {
@@ -16,14 +16,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
           <div>
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-2xl tracking-tight text-white">
-                B<span className="text-white/40">&</span>Z
-              </span>
-              <span className="text-[10px] tracking-[0.35em] text-white/50 uppercase mt-1">
-                Visuals
-              </span>
-            </div>
+            <Logo onClick={() => scrollTo("#top")} />
             <p className="mt-5 text-white/50 max-w-xs leading-relaxed">
               Modern, minimalist graphic design that speaks louder than words.
             </p>

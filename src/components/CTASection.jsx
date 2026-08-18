@@ -22,7 +22,7 @@ export default function CTASection() {
           <span className="italic font-light text-white/70">project?</span>
         </h2>
         <p className="mt-6 text-lg text-white/60 max-w-xl mx-auto">
-          Tell us what you're envisioning and we'll bring it to life — together.
+          Tell us what you're envisioning and we'll help bring it to life.
         </p>
         <button
           onClick={() => scrollTo("#contact")}

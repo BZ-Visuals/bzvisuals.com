@@ -8,14 +8,12 @@ const founders = [
   {
     name: "Zach",
     initials: "Z",
-    blurb:
-      "Obsessed with typography and the discipline of whitespace. Zach leads identity and print work.",
+    blurb: "", // Write your own bio here
   },
   {
     name: "Brody",
     initials: "B",
-    blurb:
-      "Drawn to motion and digital craft. Brody brings brands to life across screens and social.",
+    blurb: "", // Write your own bio here
   },
 ];
 
@@ -50,10 +48,10 @@ export default function About() {
             className="lg:col-span-7"
           >
             <p className="text-lg text-white/60 leading-relaxed mb-12 max-w-xl">
-              B&Z Visuals is a creative studio founded by Zach and Brody, blending
-              precision and emotion through design. Our work focuses on
-              simplicity, clarity, and impact — visuals that feel effortless but
-              are built with intention.
+              B&Z Visuals is a creative studio founded by Zach and Brody. We
+              blend precision and emotion in everything we design, focusing on
+              simplicity, clarity, and impact. The goal is work that feels
+              effortless but is built with real intention.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

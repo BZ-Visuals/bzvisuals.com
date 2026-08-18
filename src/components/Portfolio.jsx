@@ -4,52 +4,57 @@ import { ArrowUpRight, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 // ─────────────────────────────────────────────────────────────
-//  EDIT YOUR PORTFOLIO HERE
-//  Add, remove, or change projects below. Each item needs:
-//    title, category, image (URL), description
+//  YOUR PORTFOLIO — edit this list to make it your own.
+//
+//  Each project needs: title, category, image (URL), description.
+//  - Reorder the items below to change how they appear on the site.
+//  - Add a new object to add a project, or delete one to remove it.
+//  - Swap the "image" URL for your own work (upload it and paste the link).
+//  - The images below are placeholders so the page isn't empty — replace
+//    them with your real projects whenever you're ready.
 // ─────────────────────────────────────────────────────────────
 const projects = [
   {
     title: "Brand Identity",
     category: "Logo & Identity",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/05ca2c3f4_generated_d113f407.png",
+    image: "/__generating__/b6abe74a-1382-4dcd-9db2-471855c7f431.png",
     description:
-      "A complete visual identity system — logo, typography, and stationery — built around clarity and restraint.",
+      "A full visual identity system, from logo and typography to stationery, built around clarity and restraint.",
   },
   {
     title: "Poster Series",
     category: "Print Design",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/cba826886_generated_dedf1e6f.png",
+    image: "/__generating__/783542d2-e89f-43a3-8a4a-1661292ab0f7.png",
     description:
-      "Bold editorial posters exploring the tension between typography and abstract form.",
+      "Bold editorial posters playing with the space between typography and abstract form.",
   },
   {
     title: "Social Media Kit",
     category: "Digital Design",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/e2e1990ea_generated_562103fb.png",
+    image: "/__generating__/45d2b823-66bd-4af6-808b-df0686632e00.png",
     description:
-      "A cohesive set of Instagram templates designed to keep a brand recognizable across every post.",
+      "A cohesive set of Instagram templates to keep a brand recognizable across every post.",
   },
   {
     title: "Packaging Design",
     category: "Product & Packaging",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/6b2293f70_generated_5cf87f4e.png",
+    image: "/__generating__/f5fb9f31-1d27-4a53-937f-541a7acefede.png",
     description:
-      "Minimalist packaging that lets the product breathe — matte finishes and quiet confidence.",
+      "Minimalist packaging that lets the product breathe, with matte finishes and quiet confidence.",
   },
   {
     title: "Business Cards",
     category: "Stationery",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/1b8e5caf7_generated_391b5a47.png",
+    image: "/__generating__/e8df4079-d2c8-4b64-96fc-a377e0696202.png",
     description:
-      "Tactile, understated business cards that make a lasting impression without saying too much.",
+      "Tactile, understated business cards that leave a lasting impression without saying too much.",
   },
   {
     title: "Album Cover Art",
     category: "Music Branding",
-    image: "https://media.base44.com/images/public/6a846fdfb04e0ceeb0e53d92/5c572dae4_generated_ef67dc5b.png",
+    image: "/__generating__/cc98f55c-426d-499a-8d2a-829bf3524c34.png",
     description:
-      "Cover artwork that translates sound into a single, striking visual moment.",
+      "Cover artwork that turns sound into a single, striking visual moment.",
   },
 ];
 // ─────────────────────────────────────────────────────────────
@@ -68,12 +73,11 @@ export default function Portfolio() {
               Selected Work
             </p>
             <h2 className="font-display text-4xl md:text-6xl tracking-tight text-white">
-              The Portfolio
+              Our Portfolio
             </h2>
           </div>
           <p className="text-white/50 max-w-sm leading-relaxed">
-            A selection of projects spanning brand identity, print, and digital
-            design. Tap any piece to see more.
+            A look at some of the work we're proud of. Tap any piece to see more.
           </p>
         </div>
 
@@ -108,17 +112,6 @@ export default function Portfolio() {
               </div>
             </motion.button>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-white/60 mb-6">Have a project in mind?</p>
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="group inline-flex items-center gap-2 rounded-full bg-white text-black px-8 py-4 text-base font-medium hover:bg-white/90 transition-all duration-300"
-          >
-            Book Now
-            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
         </div>
       </div>
 

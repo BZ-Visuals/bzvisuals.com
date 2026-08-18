@@ -51,8 +51,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="mt-8 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
         >
-          We're Zach and Brody — graphic designers crafting modern, minimalist
-          visuals that speak louder than words.
+          We're Zach and Brody, two graphic designers who love turning ideas
+          into clean, minimalist visuals that actually say something.
         </motion.p>
 
         <motion.div

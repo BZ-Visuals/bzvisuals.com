@@ -67,8 +67,8 @@ export default function ContactForm() {
 
             <div className="mt-10 flex items-center gap-3 text-white/50">
               <Mail className="w-5 h-5" />
-              <a href="mailto:hello@bzvisuals.com" className="hover:text-white transition-colors">
-                hello@bzvisuals.com
+              <a href="mailto:contact@bzvisuals.com" className="hover:text-white transition-colors">
+                contact@bzvisuals.com
               </a>
             </div>
           </motion.div>
@@ -86,7 +86,7 @@ export default function ContactForm() {
                 </div>
                 <h3 className="font-display text-3xl text-white mb-3">Message sent!</h3>
                 <p className="text-white/60 mb-8">
-                  Thanks for reaching out — we'll get back to you shortly.
+                  Thanks for reaching out. We'll get back to you shortly.
                 </p>
                 <button
                   onClick={() => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -32,18 +33,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        <button
-          onClick={() => handleNav("#top")}
-          className="flex flex-col items-start leading-none group"
-          aria-label="B&Z Visuals home"
-        >
-          <span className="font-display text-xl tracking-tight text-white">
-            B<span className="text-white/40">&</span>Z
-          </span>
-          <span className="text-[10px] tracking-[0.35em] text-white/50 uppercase mt-0.5">
-            Visuals
-          </span>
-        </button>
+        <Logo onClick={() => handleNav("#top")} />
 
         <div className="hidden md:flex items-center gap-10">
           {links.map((l) => (
