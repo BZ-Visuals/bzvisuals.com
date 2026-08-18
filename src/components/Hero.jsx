@@ -9,8 +9,8 @@ export default function Hero() {
     <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* ambient gradient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full bg-white/[0.04] blur-[120px]" />
-        <div className="absolute top-1/3 right-1/4 w-[40vw] h-[40vw] rounded-full bg-neutral-400/[0.03] blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full bg-brand-accent/[0.06] blur-[120px]" />
+        <div className="absolute top-1/3 right-1/4 w-[40vw] h-[40vw] rounded-full bg-brand-accent/[0.04] blur-[100px]" />
       </div>
 
       {/* subtle grid */}
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-xs tracking-[0.4em] uppercase text-white/50 mb-8"
+          className="text-xs tracking-[0.4em] uppercase text-brand-accent/80 mb-8"
         >
           Graphic Design Studio
         </motion.p>
@@ -42,7 +42,7 @@ export default function Hero() {
           We help bring
           <br />
           your ideas{" "}
-          <span className="italic font-light text-white/70">to life.</span>
+          <span className="italic font-light text-brand-accent">to life.</span>
         </motion.h1>
 
         <motion.p

@@ -69,7 +69,7 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
-            <p className="text-xs tracking-[0.4em] uppercase text-white/40 mb-4">
+            <p className="text-xs tracking-[0.4em] uppercase text-brand-accent/80 mb-4">
               Selected Work
             </p>
             <h2 className="font-display text-4xl md:text-6xl tracking-tight text-white">
@@ -101,7 +101,7 @@ export default function Portfolio() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
+                  <ArrowUpRight className="w-5 h-5 text-brand-accent" />
                 </div>
               </div>
               <div className="absolute bottom-0 inset-x-0 p-6">

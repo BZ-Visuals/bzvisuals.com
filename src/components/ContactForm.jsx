@@ -51,14 +51,14 @@ export default function ContactForm() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs tracking-[0.4em] uppercase text-white/40 mb-4">
+            <p className="text-xs tracking-[0.4em] uppercase text-brand-accent/80 mb-4">
               Contact Us
             </p>
             <h2 className="font-display text-4xl md:text-6xl tracking-tight text-white leading-tight">
               Let's make
               <br />
               something{" "}
-              <span className="italic font-light text-white/70">great.</span>
+              <span className="italic font-light text-brand-accent">great.</span>
             </h2>
             <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-md">
               Have a project, a question, or just want to say hi? Drop us a
@@ -108,7 +108,7 @@ export default function ContactForm() {
                     value={form.name}
                     onChange={update("name")}
                     placeholder="Your name"
-                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 transition-colors"
+                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/60 transition-colors"
                   />
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
                     value={form.email}
                     onChange={update("email")}
                     placeholder="you@email.com"
-                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 transition-colors"
+                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/60 transition-colors"
                   />
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function ContactForm() {
                   <select
                     value={form.service}
                     onChange={update("service")}
-                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
+                    className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 text-white focus:outline-none focus:border-brand-accent/60 transition-colors"
                   >
                     <option value="">Select a service</option>
                     {services.map((s) => (

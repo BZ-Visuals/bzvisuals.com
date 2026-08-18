@@ -29,14 +29,14 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <p className="text-xs tracking-[0.4em] uppercase text-white/40 mb-4">
+            <p className="text-xs tracking-[0.4em] uppercase text-brand-accent/80 mb-4">
               About Us
             </p>
             <h2 className="font-display text-4xl md:text-5xl tracking-tight text-white leading-tight">
               Two designers.
               <br />
               One shared{" "}
-              <span className="italic font-light text-white/70">obsession.</span>
+              <span className="italic font-light text-brand-accent">obsession.</span>
             </h2>
           </motion.div>
 
