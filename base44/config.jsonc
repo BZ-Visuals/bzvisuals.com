@@ -1,5 +1,5 @@
 {
-  "name": "untitled",
+  "name": "BZ Visuals Portfolio",
   "site": {
     "installCommand": "npm install",
     "buildCommand": "npm run build",
