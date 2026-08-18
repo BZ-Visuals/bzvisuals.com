@@ -1,0 +1,34 @@
+{
+  "name": "ContactMessage",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "format": "email"
+    },
+    "service": {
+      "type": "string",
+      "title": "Service",
+      "maxLength": 100,
+      "default": ""
+    },
+    "message": {
+      "type": "string",
+      "title": "Message",
+      "minLength": 1,
+      "maxLength": 5000
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "message"
+  ]
+}
