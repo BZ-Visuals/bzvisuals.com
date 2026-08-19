@@ -1,18 +1,422 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="description" content="B&Z Visuals — a graphic design studio by Zach and Brody. Modern, minimalist brand identity, print, and digital design. Book your project today." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>B&Z Visuals — Graphic Design Studio</title>
+    <meta
+      name="description"
+      content="B&Z Visuals is a graphic design studio founded by Zach and Brody. We turn ideas into clean, minimalist visuals that actually say something."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="B&Z Visuals — Graphic Design Studio" />
+    <meta
+      property="og:description"
+      content="We help bring your ideas to life. Clean, minimalist graphic design by Zach & Brody."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts: Clash Display + Satoshi (Fontshare), Instrument Serif (Google) -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <title>B&Z Visuals — Graphic Design Studio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon: B&Z Visuals logo -->
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="B&Z Visuals home">
+          <img
+            class="brand-logo logo-for-dark"
+            src="assets/logo-white.png"
+            alt="B&Z Visuals logo"
+            height="40"
+          />
+          <img
+            class="brand-logo logo-for-light"
+            src="assets/logo-dark.png"
+            alt="B&Z Visuals logo"
+            height="40"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul role="list" class="nav-list">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-primary btn-sm" data-open-booking>Book Now <span aria-hidden="true">↗</span></button>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+        <ul role="list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button class="btn btn-primary btn-block" data-open-booking>Book Now <span aria-hidden="true">↗</span></button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow reveal">Graphic Design Studio</p>
+          <h1 class="hero-title reveal" id="hero-title">
+            We help bring your ideas <em>to life.</em>
+          </h1>
+          <p class="hero-lead reveal">
+            We're Zach and Brody, two graphic designers who love turning ideas into
+            clean, minimalist visuals that actually say something.
+          </p>
+          <div class="hero-actions reveal">
+            <button class="btn btn-primary" data-open-booking>Book Now <span aria-hidden="true">↗</span></button>
+            <a href="#work" class="btn btn-ghost">View Our Work</a>
+          </div>
+        </div>
+        <a href="#work" class="scroll-cue reveal" aria-label="Scroll to work">
+          <span>Scroll</span>
+          <span class="scroll-arrow" aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <!-- ============ PORTFOLIO ============ -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow reveal">Selected Work</p>
+              <h2 class="section-title reveal" id="work-title">Our Portfolio</h2>
+            </div>
+            <p class="section-desc reveal">
+              A look at some of the work we're proud of. Tap any piece to see more.
+            </p>
+          </div>
+
+          <ul role="list" class="portfolio-grid">
+            <li class="portfolio-item reveal" data-category="Logo & Identity">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-brand">
+                  <!-- Brand identity mock -->
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#101010"/>
+                    <circle cx="140" cy="150" r="56" fill="none" stroke="#d9b061" stroke-width="3"/>
+                    <circle cx="140" cy="150" r="20" fill="#d9b061"/>
+                    <rect x="220" y="120" width="120" height="8" rx="4" fill="#e7e7e7"/>
+                    <rect x="220" y="140" width="80" height="6" rx="3" fill="#8a8a8a"/>
+                    <rect x="220" y="156" width="100" height="6" rx="3" fill="#8a8a8a"/>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Logo &amp; Identity</p>
+                <h3 class="portfolio-name">Brand Identity</h3>
+              </a>
+            </li>
+
+            <li class="portfolio-item reveal" data-category="Print Design">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-print">
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#141414"/>
+                    <rect x="40" y="40" width="320" height="220" fill="#1c1c1c"/>
+                    <text x="60" y="120" font-family="Georgia,serif" font-size="54" font-style="italic" fill="#e7e7e7">type</text>
+                    <text x="60" y="180" font-family="Georgia,serif" font-size="40" fill="#d9b061">matters.</text>
+                    <rect x="60" y="210" width="60" height="3" fill="#d9b061"/>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Print Design</p>
+                <h3 class="portfolio-name">Poster Series</h3>
+              </a>
+            </li>
+
+            <li class="portfolio-item reveal" data-category="Digital Design">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-social">
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#0f0f0f"/>
+                    <rect x="30" y="40" width="150" height="220" rx="12" fill="#1a1a1a"/>
+                    <rect x="200" y="40" width="170" height="105" rx="12" fill="#1a1a1a"/>
+                    <rect x="200" y="155" width="170" height="105" rx="12" fill="#1a1a1a"/>
+                    <circle cx="105" cy="120" r="30" fill="#d9b061"/>
+                    <rect x="55" y="180" width="100" height="8" rx="4" fill="#3a3a3a"/>
+                    <rect x="55" y="200" width="70" height="6" rx="3" fill="#2a2a2a"/>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Digital Design</p>
+                <h3 class="portfolio-name">Social Media Kit</h3>
+              </a>
+            </li>
+
+            <li class="portfolio-item reveal" data-category="Product & Packaging">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-packaging">
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#121212"/>
+                    <path d="M150 60 L250 60 L280 110 L280 250 L120 250 L120 110 Z" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="2"/>
+                    <rect x="150" y="60" width="100" height="50" fill="#d9b061"/>
+                    <text x="200" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#e7e7e7">B&amp;Z</text>
+                    <text x="200" y="205" text-anchor="middle" font-family="sans-serif" font-size="9" letter-spacing="2" fill="#8a8a8a">EST. 2026</text>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Product &amp; Packaging</p>
+                <h3 class="portfolio-name">Packaging Design</h3>
+              </a>
+            </li>
+
+            <li class="portfolio-item reveal" data-category="Stationery">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-stationery">
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#131313"/>
+                    <rect x="60" y="60" width="200" height="120" rx="6" fill="#f3f1ea"/>
+                    <rect x="80" y="80" width="120" height="8" rx="4" fill="#1a1a1a"/>
+                    <rect x="80" y="100" width="80" height="5" rx="2" fill="#999"/>
+                    <rect x="200" y="150" width="160" height="100" rx="6" fill="#1e1e1e" stroke="#d9b061" stroke-width="1.5"/>
+                    <circle cx="280" cy="200" r="22" fill="none" stroke="#d9b061" stroke-width="2"/>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Stationery</p>
+                <h3 class="portfolio-name">Business Cards</h3>
+              </a>
+            </li>
+
+            <li class="portfolio-item reveal" data-category="Music Branding">
+              <a href="#contact" class="portfolio-card">
+                <div class="portfolio-thumb thumb-music">
+                  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="400" height="300" fill="#0e0e0e"/>
+                    <rect x="80" y="40" width="240" height="220" rx="8" fill="#1c1c1c"/>
+                    <circle cx="200" cy="150" r="70" fill="none" stroke="#2a2a2a" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="45" fill="none" stroke="#3a3a3a" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="14" fill="#d9b061"/>
+                    <path d="M200 80 A70 70 0 0 1 270 150" fill="none" stroke="#d9b061" stroke-width="3"/>
+                  </svg>
+                </div>
+                <p class="portfolio-cat">Music Branding</p>
+                <h3 class="portfolio-name">Album Cover Art</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ CTA BAND ============ -->
+      <section class="cta-band" aria-labelledby="cta-title">
+        <div class="container cta-inner">
+          <h2 class="cta-title reveal" id="cta-title">Ready to start your <em>project?</em></h2>
+          <p class="cta-text reveal">
+            Tell us what you're envisioning and we'll help bring it to life.
+          </p>
+          <button class="btn btn-primary reveal" data-open-booking>Book Now <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="about-left">
+            <p class="eyebrow reveal">About Us</p>
+            <h2 class="section-title about-title reveal" id="about-title">
+              Two designers. One shared <em>obsession.</em>
+            </h2>
+          </div>
+          <div class="about-right">
+            <p class="reveal">
+              B&amp;Z Visuals is a creative studio founded by Zach and Brody. We blend
+              precision and emotion in everything we design — from brand identities and
+              packaging to print and digital work.
+            </p>
+            <p class="reveal">
+              The goal is work that feels effortless but is built with real intention.
+              Every line, every kerning pair, every color choice has a reason behind it.
+            </p>
+          </div>
+        </div>
+
+        <div class="container">
+          <ul role="list" class="people-grid">
+            <li class="person-card reveal">
+              <div class="person-avatar" aria-hidden="true">Z</div>
+              <h3 class="person-name">Zach</h3>
+              <p class="person-role">Co-founder · Designer</p>
+              <button class="btn btn-ghost btn-sm" data-open-booking>Work with us <span aria-hidden="true">↗</span></button>
+            </li>
+            <li class="person-card reveal">
+              <div class="person-avatar person-avatar--alt" aria-hidden="true">B</div>
+              <h3 class="person-name">Brody</h3>
+              <p class="person-role">Co-founder · Designer</p>
+              <button class="btn btn-ghost btn-sm" data-open-booking>Work with us <span aria-hidden="true">↗</span></button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-info">
+            <p class="eyebrow reveal">Contact Us</p>
+            <h2 class="section-title reveal" id="contact-title">Let's make something <em>great.</em></h2>
+            <p class="contact-text reveal">
+              Have a project in mind? Send us a message and we'll get back to you within
+              two business days.
+            </p>
+            <a class="contact-email reveal" href="mailto:contact@bzvisuals.com">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m3 7 9 6 9-6"/>
+              </svg>
+              contact@bzvisuals.com
+            </a>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-need">What do you need? <span class="field-optional">(optional)</span></label>
+              <select id="cf-need" name="need">
+                <option value="">Select a service…</option>
+                <option>Logo &amp; Brand Identity</option>
+                <option>Print Design</option>
+                <option>Digital / Social Media</option>
+                <option>Packaging</option>
+                <option>Stationery</option>
+                <option>Music / Album Art</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message <span aria-hidden="true">↗</span></button>
+            <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <img
+            class="brand-logo logo-for-dark footer-logo"
+            src="assets/logo-white.png"
+            alt="B&Z Visuals logo"
+            height="56"
+          />
+          <img
+            class="brand-logo logo-for-light footer-logo"
+            src="assets/logo-dark.png"
+            alt="B&Z Visuals logo"
+            height="56"
+          />
+          <p class="footer-tagline">
+            Modern, minimalist graphic design that speaks louder than words.
+          </p>
+        </div>
+
+        <div class="footer-actions">
+          <button class="btn btn-primary btn-sm" data-open-booking>Book Now <span aria-hidden="true">↗</span></button>
+          <ul role="list" class="social-list">
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bar">
+        <p>© <span id="year">2026</span> B&amp;Z Visuals. All rights reserved.</p>
+        <p>Designed &amp; built with intention.</p>
+      </div>
+    </footer>
+
+    <!-- ============ BOOKING MODAL ============ -->
+    <div class="modal-overlay" id="booking-modal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="Close booking form" data-close-booking>×</button>
+        <p class="eyebrow">Book a Project</p>
+        <h2 class="modal-title" id="modal-title">Let's bring it to <em>life.</em></h2>
+        <p class="modal-text">Fill this out and we'll open your email app with everything ready to send.</p>
+        <form id="booking-form" novalidate>
+          <div class="field">
+            <label for="bk-name">Name</label>
+            <input type="text" id="bk-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="bk-email">Email</label>
+            <input type="email" id="bk-email" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="bk-need">What do you need?</label>
+            <select id="bk-need" name="need">
+              <option value="">Select a service…</option>
+              <option>Logo &amp; Brand Identity</option>
+              <option>Print Design</option>
+              <option>Digital / Social Media</option>
+              <option>Packaging</option>
+              <option>Stationery</option>
+              <option>Music / Album Art</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bk-message">Message</label>
+            <textarea id="bk-message" name="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send via email <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Opens your email app — no info is stored on this site.</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
   </body>
 </html>

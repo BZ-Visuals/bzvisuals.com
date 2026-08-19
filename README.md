@@ -1,77 +1,117 @@
-# Base44 Project
+# B&Z Visuals
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+A modern, dark, minimalist marketing & portfolio site for **B&Z Visuals**, a graphic design studio founded by Zach and Brody.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+Built as plain, editable **HTML / CSS / JavaScript** — no framework, no build step, no database. Open `index.html` in a browser and it runs.
 
-## Prerequisites
+---
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
+## What's inside
 
-See the [Base44 CLI docs](https://docs.base44.com/developers/references/cli/get-started/overview) if you want to run Base44 commands directly.
+```
+bzvisuals/
+├── index.html      # Page structure & content
+├── styles.css      # All styling (design tokens at the top)
+├── script.js       # Interactivity (menu, modal, forms, reveal)
+└── README.md       # You are here
+```
 
-## Run Locally
+## Run locally
 
-Run the full local development environment from the project root:
+Just open `index.html` in a browser. Or, for the mailto form and smooth scrolling to behave like production, serve it over http:
 
 ```bash
-base44 dev
+# Python
+python -m http.server 8000
+# then visit http://localhost:8000
+
+# Node (if you have npx)
+npx serve
 ```
 
-`base44 dev` starts the local Base44 development backend and, when this app is configured for it, also starts the frontend dev server for you. Use the frontend URL printed by the command.
+## Deploy (free, with GitHub Pages)
 
-For example, when the Base44 project config includes a `serveCommand`, `base44 dev` can launch the frontend too:
+1. Push this folder to a GitHub repository.
+2. In the repo, go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** = *Deploy from a branch*, **Branch** = `main` / `root`, and **Save**.
+4. Your site goes live at `https://<your-username>.github.io/<repo-name>/` in a minute or two.
 
-```json5
-{
-  "site": {
-    "serveCommand": "npm run dev"
-  }
-}
+Works equally well on Netlify, Vercel, or Cloudflare Pages — just connect the repo, no build command needed.
+
+---
+
+## How to edit things
+
+All edits happen in `index.html` unless noted.
+
+### Contact email / where bookings are sent
+In `script.js`, inside `buildMailto()`, change `contact@bzvisuals.com` (appears twice). Also update the visible address in `index.html` (search for `contact@bzvisuals.com`).
+
+### Brand name & tagline
+Search `index.html` for `B&Z` and `VISUALS`, and the footer tagline `Modern, minimalist graphic design…`.
+
+### Hero text
+The hero heading is `We help bring your ideas to life.` — the gold italic word is wrapped in `<em>`, e.g. `<em>to life.</em>`. Wrap any word you want gold-italic in `<em>`.
+
+### Portfolio items
+Each portfolio card is a `<li class="portfolio-item">` in the `<!-- PORTFOLIO -->` section. To add one, copy an existing `<li>` and change:
+- the inner `<svg>` (the preview visual),
+- `<p class="portfolio-cat">` (small gold label),
+- `<h3 class="portfolio-name">` (the title).
+
+To use a real image instead of the SVG mock, replace the `<svg>...</svg>` with:
+```html
+<img src="assets/your-image.jpg" alt="Describe the project" />
 ```
+and drop the file in an `assets/` folder.
 
-In a Base44 project this lives in `base44/config.jsonc`.
+### About / people
+Edit the `.person-card` blocks under `<!-- ABOUT -->`. Change the initial letter, name, and role.
 
-## Run Only The Frontend
+### Contact form services
+The "What do you need?" dropdown options live in two places (the contact form and the booking modal) — search for `Logo & Brand Identity` and edit both `<select>` lists to keep them in sync.
 
-If you only want to work on the frontend against the hosted Base44 backend, run:
+### Logo (header, footer, browser tab)
+Your logo lives in the `assets/` folder:
+- `logo-white.png` — white logo (shown on the dark theme)
+- `logo-dark.png` — black logo (shown on the light theme)
+- `favicon.png` — the browser tab icon
 
-```bash
-npm run dev
-```
+To use a new logo, replace those files with your own (keep the same filenames). PNG with a transparent background works best. If you only have a black-on-white or white-on-white JPEG, the easiest path is to make a transparent PNG in Figma/Canva/Photoshop and drop it in as `logo-white.png` (and a black version as `logo-dark.png`). The site automatically picks the right color for the active theme.
 
-Open the local URL printed by Vite.
+To change the logo size, edit `.brand-logo` (header) and `.footer-logo` (footer) in `styles.css` — change the `height` value.
 
-## Use The Hosted Backend
+### Fonts
+Fonts are loaded from Fontshare + Google Fonts in the `<head>` of `index.html` (the two `<link>` tags). The font families used are:
+- `--font-display` (Clash Display) — headings
+- `--font-body` (Satoshi) — body text
+- `--font-serif` (Instrument Serif) — the gold italic emphasis words
 
-For frontend-only development, create or update `.env.local` in the project root:
+To change a font, define it at the top of `styles.css` under `:root`, e.g. swap `--font-body` to another family. To use a Google Font, grab its `<link>` from fonts.google.com, paste it in the `<head>`, and set the variable to that font's name.
 
-```bash
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=https://your-app.base44.app
-```
+### Colors
+In `styles.css`, under `:root` and `[data-theme="dark"]` / `[data-theme="light"]`, the `--gold` variable controls the accent color. Change that one value to retheme the whole site. Backgrounds use `--bg`, surfaces use `--surface`, text uses `--text`.
 
-`VITE_BASE44_APP_ID` identifies the Base44 app.
+### Social links
+In the footer, update the `href` on the Instagram and Facebook links (currently `https://instagram.com` and `https://facebook.com`).
 
-`VITE_BASE44_APP_BASE_URL` tells the Base44 Vite plugin where to send local `/api` requests. Point it at your deployed Base44 app URL when you want the local frontend to use the hosted backend.
+---
 
-When you use `base44 dev`, the command injects the local Base44 values for you, so `.env.local` is mainly needed for frontend-only workflows.
+## How the "Book Now" / contact form works
 
-## Publish Your Changes
+There is **no backend** — this is a static site. Both the "Book Now" modal and the contact form assemble a `mailto:` link to `contact@bzvisuals.com` and open the visitor's email app with the name, email, service, and message pre-filled. Nothing is stored on the site.
 
-After pushing your changes to git, open the Base44 dashboard and publish the app:
+To collect submissions automatically instead, connect the form to a service like [Formspree](https://formspree.io), [Web3Forms](https://web3forms.com), or a Google Form, and point the form's `action` at the endpoint they give you.
 
-```bash
-base44 dashboard open
-```
+---
 
-## Docs & Support
+## Accessibility & performance notes
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+- Default dark theme; light theme available via `[data-theme="light"]` on `<html>` if you wire up a toggle.
+- Fully keyboard-navigable: modal closes on `Esc`, focus moves into the form on open.
+- Respects `prefers-reduced-motion`.
+- Fluid type and a 4px spacing system keep it crisp on phones and large monitors.
 
-Base44 CLI command reference: [https://docs.base44.com/developers/references/cli/commands/introduction](https://docs.base44.com/developers/references/cli/commands/introduction)
+---
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+© 2026 B&Z Visuals. Designed & built with intention.
