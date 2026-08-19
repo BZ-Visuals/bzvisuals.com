@@ -102,57 +102,43 @@
     }
   });
 
-  /* ---------- Build a mailto: link from a form ---------- */
-  function buildMailto(form) {
-    var data = new FormData(form);
-    var name = (data.get("name") || "").toString().trim();
-    var email = (data.get("email") || "").toString().trim();
-    var need = (data.get("need") || "").toString().trim();
-    var message = (data.get("message") || "").toString().trim();
-
-    var subject = "New project inquiry — " + (name || "Website");
-    var lines = [];
-    if (name) lines.push("Name: " + name);
-    if (email) lines.push("Email: " + email);
-    if (need) lines.push("Service: " + need);
-    if (message) lines.push("Message: " + message);
-    var body = lines.join("\n\n");
-
-    return (
-      "mailto:contact@bzvisuals.com?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body)
-    );
-  }
-
-  /* ---------- Booking form submit ---------- */
-  var bookingForm = document.getElementById("booking-form");
-  if (bookingForm) {
-    bookingForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!bookingForm.checkValidity()) {
-        bookingForm.reportValidity();
+  /* ---------- Form submission (via Formsubmit.co) ----------
+     Forms POST to https://formsubmit.co/contact@bzvisuals.com.
+     On success Formsubmit redirects to ?sent=true#contact.
+     We validate client-side first, then let the native submit go through.
+     A hidden honeypot (_honey) drops bot submissions. */
+  function wireForm(form) {
+    if (!form) return;
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn ? btn.dataset.submitLabel : null;
+    form.addEventListener("submit", function (e) {
+      // honeypot filled = bot; bail silently
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value) {
+        e.preventDefault();
         return;
       }
-      window.location.href = buildMailto(bookingForm);
-    });
-  }
-
-  /* ---------- Contact form submit ---------- */
-  var contactForm = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
         return;
       }
-      window.location.href = buildMailto(contactForm);
-      if (status) {
-        status.textContent = "Opening your email app… if nothing happened, email contact@bzvisuals.com.";
+      // valid — let it submit; show a sending state on the button
+      if (btn && label) {
+        btn.disabled = true;
+        btn.textContent = "Sending…";
       }
     });
+  }
+  wireForm(document.getElementById("contact-form"));
+  wireForm(document.getElementById("booking-form"));
+
+  /* ---------- Show success banner after redirect back ---------- */
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "true") {
+    var banner = document.getElementById("success-banner");
+    if (banner) banner.removeAttribute("hidden");
+    // clean the URL so a refresh doesn't re-show it
+    history.replaceState(null, "", window.location.pathname + window.location.hash);
   }
 })();

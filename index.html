@@ -296,7 +296,16 @@
             </a>
           </div>
 
-          <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="success-banner" id="success-banner" role="status" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Thanks! Your message was sent — we'll reply within two business days.</span>
+          </div>
+          <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/contact@bzvisuals.com" method="POST">
+            <input type="hidden" name="_subject" value="New project inquiry from bzvisuals.com" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://bzvisuals.com/?sent=true#contact" />
+            <input type="text" name="_honey" class="honey" autocomplete="off" tabindex="-1" aria-hidden="true" />
             <div class="field">
               <label for="cf-name">Name</label>
               <input type="text" id="cf-name" name="name" autocomplete="name" required />
@@ -322,7 +331,7 @@
               <label for="cf-message">Message</label>
               <textarea id="cf-message" name="message" rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Send Message <span aria-hidden="true">↗</span></button>
+            <button type="submit" class="btn btn-primary btn-block" data-submit-label="Send Message ↗">Send Message <span aria-hidden="true">↗</span></button>
             <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -388,7 +397,12 @@
         <p class="eyebrow">Book a Project</p>
         <h2 class="modal-title" id="modal-title">Let's bring it to <em>life.</em></h2>
         <p class="modal-text">Fill this out and we'll open your email app with everything ready to send.</p>
-        <form id="booking-form" novalidate>
+        <form id="booking-form" action="https://formsubmit.co/contact@bzvisuals.com" method="POST">
+          <input type="hidden" name="_subject" value="Book Now request from bzvisuals.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://bzvisuals.com/?sent=true#contact" />
+          <input type="text" name="_honey" class="honey" autocomplete="off" tabindex="-1" aria-hidden="true" />
           <div class="field">
             <label for="bk-name">Name</label>
             <input type="text" id="bk-name" name="name" autocomplete="name" required />
@@ -414,8 +428,8 @@
             <label for="bk-message">Message</label>
             <textarea id="bk-message" name="message" rows="3" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Send via email <span aria-hidden="true">↗</span></button>
-          <p class="form-note">Opens your email app — no info is stored on this site.</p>
+          <button type="submit" class="btn btn-primary btn-block" data-submit-label="Send ↗">Send <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Sends to contact@bzvisuals.com — no info stored on this site.</p>
         </form>
       </div>
     </div>

@@ -632,6 +632,37 @@ em {
   margin-bottom: var(--space-5);
 }
 
+/* honeypot (anti-spam, hidden from humans) */
+.honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Success banner ---------- */
+.success-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--gold) 40%, transparent);
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.success-banner svg {
+  flex-shrink: 0;
+}
+.success-banner[hidden] {
+  display: none;
+}
+
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;

@@ -99,9 +99,13 @@ In the footer, update the `href` on the Instagram and Facebook links (currently 
 
 ## How the "Book Now" / contact form works
 
-There is **no backend** — this is a static site. Both the "Book Now" modal and the contact form assemble a `mailto:` link to `contact@bzvisuals.com` and open the visitor's email app with the name, email, service, and message pre-filled. Nothing is stored on the site.
+Forms submit via [Formsubmit.co](https://formsubmit.co) to **contact@bzvisuals.com** — a free service that forwards submissions to your inbox as real emails. No backend, no database, no signup needed.
 
-To collect submissions automatically instead, connect the form to a service like [Formspree](https://formspree.io), [Web3Forms](https://web3forms.com), or a Google Form, and point the form's `action` at the endpoint they give you.
+**One-time activation:** the very first time someone submits, Formsubmit sends a confirmation email to contact@bzvisuals.com. Click the link in it to activate delivery. After that, all submissions come straight through.
+
+To change the destination email, search `index.html` for `formsubmit.co/contact@bzvisuals.com` (appears twice: contact form + booking modal) and replace it. Also update the visible address in the `<!-- CONTACT -->` section.
+
+To swap for a different provider (Formspree, Web3Forms, a Google Form), change the form `action` and hidden fields in `index.html`.
 
 ---
 
